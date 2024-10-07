@@ -10,6 +10,7 @@
         "lint": "next lint && prettier --check .",
         "lint:fix": "next lint --fix && prettier --write .",
         "typecheck": "tsc --noEmit",
+        "pre:push": "run-s lint:fix checks",
         "checks": "run-p -c typecheck lint",
         "test:e2e": "playwright test",
         "test:unit": "vitest",
