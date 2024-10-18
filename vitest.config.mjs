@@ -8,6 +8,7 @@ export default defineConfig({
     plugins: [react(), tsconfigPaths(), vanillaExtractPlugin()],
     test: {
         mockReset: true,
+        reporters: process.env.CI ? ['basic', 'github-actions'] : ['verbose'],
         environment: 'happy-dom',
         include: ['src/**/*.(test).{js,jsx,ts,tsx}'],
         coverage: {
