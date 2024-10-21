@@ -11,6 +11,7 @@
         "lint:fix": "next lint --fix && prettier --write .",
         "typecheck": "tsc --noEmit",
         "pre:commit": "npx lint-staged",
+        "build:docker:production": "docker build --file Dockerfile.prod --platform=linux/amd64 -t $DOCKER_TAG .",
         "checks": "run-p -c typecheck lint",
         "test:e2e": "playwright test",
         "test:unit": "vitest",
