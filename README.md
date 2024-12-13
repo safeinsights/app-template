@@ -4,7 +4,11 @@ This repository is a template to start applications from as well as the SafeInsi
 
 ## Bootstrapping an application
 
--   Fork this repository andp pull from the fork
+-   **DO NOT** fork this repository using GitHub, instead:
+    -   clone the app-template repository, rename the directory to reflect your new project
+    -   go into the directory and run `bin/bootstrap-from-app-template` this will delete references to app-template and setup fresh
+    -   create a new repository on github, DO NOT add license or any of the suggested files, leave it completly blank
+    -   run the suggested commands on github to setup and push to main on the new project
 -   Update package.json with app name and adjust other fields as needed
 -   Add yourself to the AUTHORS file
 -   From inside the new app's directory, run `./bin/bootstrap-from-app-template` this script will:
