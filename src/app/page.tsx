@@ -1,4 +1,5 @@
 import { css } from '../../styled-system/css'
+import { Title } from '@mantine/core'
 
 const pageStyles = css({
     display: 'grid',
@@ -27,7 +28,9 @@ const footerStyles = css({
 export default function Home() {
     return (
         <div className={pageStyles}>
-            <main className={mainStyles}>Hello World</main>
+            <main className={mainStyles}>
+                <Title>Hello World</Title>
+            </main>
             <footer className={footerStyles}>A SafeInsights production</footer>
         </div>
     )

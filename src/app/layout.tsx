@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import '@mantine/core/styles.css'
+import '@mantine/core/styles.layer.css'
 import { Providers } from '@/components/providers'
 
 export const metadata: Metadata = {
