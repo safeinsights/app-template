@@ -16,3 +16,7 @@ yarn-error.log*
 package-lock.json
 coverage/
 playwright-report/
+
+## Panda
+styled-system
+styled-system-studio

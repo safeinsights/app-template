@@ -4,48 +4,76 @@
     "description": "App Template",
     "main": "index.js",
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbopack",
+        "prepare": "panda codegen",
         "build": "next build",
+        "build:docker:production": "docker build --file Dockerfile.prod --platform=linux/amd64 -t $DOCKER_TAG .",
+        "build:docker:ci": "docker build --file Dockerfile.dev -t $DOCKER_TAG .",
         "start": "next start",
         "lint": "next lint && prettier --check .",
         "lint:fix": "next lint --fix && prettier --write .",
         "typecheck": "tsc --noEmit",
-        "pre:commit": "npx lint-staged",
-        "build:docker:production": "docker build --file Dockerfile.prod --platform=linux/amd64 -t $DOCKER_TAG .",
+        "pre:push": "run-s lint:fix checks",
         "checks": "run-p -c typecheck lint",
         "test:e2e": "playwright test",
         "test:unit": "vitest",
-        "test": "run-p -c test:*"
+        "test": "run-p -c test:*",
+        "pre:commit": "npx lint-staged"
     },
     "author": "Nathan Stitt",
     "license": "AGPL-3.0-or-later",
     "devDependencies": {
-        "@playwright/test": "^1.47",
-        "@testing-library/react": "^16.0",
-        "@types/react": "18.3",
-        "@vanilla-extract/vite-plugin": "^4.0.16",
-        "@vitejs/plugin-react": "^4.3.2",
-        "@vitest/coverage-v8": "^2.1.1",
+        "@eslint/js": "^9.16.0",
+        "@next/eslint-plugin-next": "^15.1.0",
+        "@pandacss/dev": "^0.49.0",
+        "@playwright/test": "^1.49",
+        "@testing-library/react": "^16.1",
+        "@types/react": "19.0.1",
+        "@vanilla-extract/vite-plugin": "^4.0.18",
+        "@vitejs/plugin-react": "^4.3.4",
+        "@vitest/coverage-v8": "^2.1.8",
         "dotenv": "*",
-        "eslint": "*",
+        "eslint": "^9.16.0",
         "eslint-config-next": "*",
         "eslint-config-prettier": "*",
+        "eslint-plugin-react": "^7.37.2",
+        "globals": "^15.13.0",
         "happy-dom": "*",
         "husky": "^9.1.6",
         "lint-staged": "^15.2.10",
         "npm-run-all": "*",
         "prettier": "*",
-        "vite-tsconfig-paths": "^5.0.1",
+        "typescript-eslint": "^8.18.0",
+        "vite-tsconfig-paths": "^5.1.4",
         "vitest": "*"
     },
+    "overrides": {
+        "react-remove-scroll": {
+            "react": "^19.0.0"
+        },
+        "use-callback-ref": {
+            "react": "^19.0.0"
+        },
+        "react-textarea-autosize": {
+            "react": "^19.0.0"
+        },
+        "react-number-format": {
+            "react": "^19.0.0",
+            "react-dom": "^19.0.0"
+        },
+        "swr": {
+            "react": "^19.0.0"
+        }
+    },
     "dependencies": {
-        "@clerk/nextjs": "^5.6.4",
-        "@mantine/core": "^7.13",
-        "@mantine/form": "^7.13",
-        "@mantine/modals": "^7.13",
-        "@vanilla-extract/css": "^1.16",
-        "@vanilla-extract/next-plugin": "^2.4",
+        "@clerk/nextjs": "^6.9.1",
+        "@mantine/core": "^7.15",
+        "@mantine/form": "^7.15",
+        "@mantine/modals": "^7.15",
         "clsx": "*",
-        "next-swagger-doc": "^0.4"
+        "next": "15.1.0",
+        "next-swagger-doc": "^0.4",
+        "react": "19.0.0",
+        "react-dom": "19.0.0"
     }
 }
