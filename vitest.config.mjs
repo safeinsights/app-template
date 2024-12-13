@@ -16,6 +16,7 @@ export default defineConfig({
             // skipFull: true,
             thresholds: { 100: true },
             include: ['src/**/*.{js,jsx,ts,tsx}'],
+            exclude: ['src/styles/**/*.ts'],
         },
     },
 })
