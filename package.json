@@ -2,6 +2,8 @@
     "name": "app-template",
     "version": "0.0.1",
     "description": "App Template",
+    "license": "AGPL-3.0-or-later",
+    "author": "Nathan Stitt",
     "main": "index.js",
     "scripts": {
         "dev": "next dev --turbopack",
@@ -20,8 +22,17 @@
         "test": "run-p -c test:*",
         "pre:commit": "npx lint-staged"
     },
-    "author": "Nathan Stitt",
-    "license": "AGPL-3.0-or-later",
+    "dependencies": {
+        "@clerk/nextjs": "^6.9.1",
+        "@mantine/core": "^7.15",
+        "@mantine/form": "^7.15",
+        "@mantine/modals": "^7.15",
+        "clsx": "*",
+        "next": "15.1.0",
+        "next-swagger-doc": "^0.4",
+        "react": "19.0.0",
+        "react-dom": "19.0.0"
+    },
     "devDependencies": {
         "@eslint/js": "^9.16.0",
         "@next/eslint-plugin-next": "^15.1.0",
@@ -64,16 +75,5 @@
         "swr": {
             "react": "^19.0.0"
         }
-    },
-    "dependencies": {
-        "@clerk/nextjs": "^6.9.1",
-        "@mantine/core": "^7.15",
-        "@mantine/form": "^7.15",
-        "@mantine/modals": "^7.15",
-        "clsx": "*",
-        "next": "15.1.0",
-        "next-swagger-doc": "^0.4",
-        "react": "19.0.0",
-        "react-dom": "19.0.0"
     }
 }
