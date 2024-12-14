@@ -1,17 +1,17 @@
-import { style } from '@vanilla-extract/css'
+import { css } from './generated/css'
 
-export const pageStyles = style({
+export const pageStyles = css({
     display: 'grid',
     gridTemplateRows: '1fr 20px',
     alignItems: 'center',
     justifyItems: 'center',
     minHeight: '100svh',
-    padding: 80,
-    gap: 64,
+    padding: 3,
+    gap: '6px',
     fontSynthesis: 'none',
 })
 
-export const mainStyles = style({
+export const mainStyles = css({
     display: 'flex',
     flexDirection: 'column',
     fontSize: 20,
@@ -19,7 +19,7 @@ export const mainStyles = style({
     gap: 32,
 })
 
-export const footerStyles = style({
+export const footerStyles = css({
     fontSize: '80%',
     fontStyle: 'oblique',
 })
